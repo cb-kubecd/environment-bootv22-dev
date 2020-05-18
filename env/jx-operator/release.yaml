@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2020-05-18T08:15:29Z"
+  deletionTimestamp: null
+  name: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+spec:
+  commits:
+  - author: {}
+    branch: master
+    committer: {}
+    message: |
+      fix: show pipelines on startup for local clusters
+    sha: 92dc12f0cf6726366342c90f3c1cde9b54b54828
+  gitCloneUrl: https://github.com/cloudbees/jx-operator.git
+  gitHttpUrl: https://github.com/cloudbees/jx-operator
+  gitOwner: cloudbees
+  gitRepository: jx-operator
+  name: '{{ .Chart.Name }}'
+  version: 0.0.24
+status: {}

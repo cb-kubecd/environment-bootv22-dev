@@ -21,3 +21,6 @@ dependencies:
 - name: jx-app-cb-remote
   repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
   version: 0.0.40
+- name: jx-operator
+  repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
+  version: 0.0.24
