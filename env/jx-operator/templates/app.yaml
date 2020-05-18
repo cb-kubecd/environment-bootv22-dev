@@ -1,0 +1,12 @@
+apiVersion: jenkins.io/v1
+kind: App
+metadata:
+  annotations:
+    jenkins.io/chart-description: A Helm chart for the CloudBees Jenkins X Operator
+    jenkins.io/chart-repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
+  creationTimestamp: null
+  labels:
+    jenkins.io/app-name: jx-operator
+    jenkins.io/app-version: 0.0.24
+  name: jx-operator
+spec: {}
