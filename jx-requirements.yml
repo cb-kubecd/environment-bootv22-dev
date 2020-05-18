@@ -37,7 +37,8 @@ environments:
       enabled: false
       production: false
   key: staging
-  repository: environment-bootv22-staging
+  remoteCluster: true
+  repository: environment-bootv3-staging4
 - ingress:
     domain: ""
     externalDNS: false
