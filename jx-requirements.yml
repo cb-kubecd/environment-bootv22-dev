@@ -1,35 +1,90 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: bootv22
+  devEnvApprovers:
+  - jstrachan
+  environmentGitOwner: cb-kubecd
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jstrachan-multicluster
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  vaultName: bootv22
+  vaultSAName: bootv22-vt
+  zone: europe-west1-d
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 34.78.195.22.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: true
+  key: dev
+  repository: environment-bootv22-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-bootv22-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-bootv22-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.78.195.22.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
-    production: false
+    production: true
 kaniko: true
-secretStorage: local
+repository: nexus
+secretStorage: vault
 storage:
+  backup:
+    enabled: true
+    url: gs://backup-bootv22-b1b3615a8cea
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://logs-bootv22-b1b3615a8cea
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://reports-bootv22-b1b3615a8cea
   repository:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://repository-bootv22-b1b3615a8cea
+vault:
+  bucket: vault-bootv22-b1b3615a8cea
+  key: crypto-key-bootv22-b1b3615a8cea
+  keyring: keyring-bootv22-b1b3615a8cea
+  name: bootv22
+  serviceAccount: bootv22-vt
+velero:
+  namespace: velero
+  schedule: 0 * * * *
+  serviceAccount: bootv22-vo
+  ttl: 720h0m0s
 versionStream:
-  ref: "master"
+  ref: v1.0.462
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
