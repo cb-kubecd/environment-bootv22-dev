@@ -1,0 +1,19 @@
+apiVersion: jenkins.io/v1
+kind: Plugin
+metadata:
+  annotations:
+    jenkins.io/chart-description: A Helm chart for Kubernetes
+    jenkins.io/chart-repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
+  creationTimestamp: null
+  labels:
+    chart: jx-app-cb-remote-0.0.40
+    jenkins.io/app-name: jx-app-cb-remote
+    jenkins.io/app-type: pipeline-extension
+    jenkins.io/app-version: 0.0.40
+    jenkins.io/pluginCommand: jx-remote
+  name: jx-app-cb-remote-jx-app-cb-remote
+spec:
+  pipelineExtension:
+    command: /jx-app-cb-remote
+    image: gcr.io/jenkinsxio-labs-private/jx-app-cb-remote:0.0.40
+    name: CBRemote
