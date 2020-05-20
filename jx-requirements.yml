@@ -36,8 +36,7 @@ environments:
       email: ""
       enabled: false
       production: false
-  key: staging
-  remoteCluster: true
+  key: environment-bootv22-production
   repository: environment-bootv3-staging4
 - ingress:
     domain: ""
