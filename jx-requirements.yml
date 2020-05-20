@@ -37,7 +37,9 @@ environments:
       enabled: false
       production: false
   key: staging
-  repository: environment-bootv22-staging
+  owner: cb-kubecd
+  remoteCluster: true
+  repository: environment-bootv3-staging5
 - ingress:
     domain: ""
     externalDNS: false
