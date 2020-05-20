@@ -36,8 +36,8 @@ environments:
       email: ""
       enabled: false
       production: false
-  key: environment-bootv22-production
-  repository: environment-bootv3-staging4
+  key: staging
+  repository: environment-bootv22-staging
 - ingress:
     domain: ""
     externalDNS: false
