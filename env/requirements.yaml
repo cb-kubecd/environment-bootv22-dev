@@ -20,7 +20,7 @@ dependencies:
   repository: http://chartmuseum.jenkins-x.io
 - name: jx-app-cb-remote
   repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
-  version: 0.0.86
+  version: 0.0.88
 - name: jx-operator
   repository: https://storage.googleapis.com/jenkinsxio-labs-private/charts
   version: 0.0.24
